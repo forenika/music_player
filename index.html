@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>音乐播放器</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" type="text/css" href="./css/cont.css" />
+  </head>
+
+  <body id="body" background="./img/bg0.png">
+    <div class="upper-container">
+      <!-- 唱片背景 -->
+      <div class="record-container">
+        <div class="record-bg">
+          <div id="record-img"></div>
+        </div>
+      </div>
+      <!-- 音乐介绍 -->
+      <div class="introduction-container">
+        <div class="text-container">
+          <div id="music-title">逆光-变奏</div>
+          <div class="author-container">
+            作者：
+            <span id="author-name">芳贺敬太</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 音乐播放器主要内容 -->
+    <div class="audio-box">
+      <div class="audio-container">
+        <audio id="audioTag"></audio>
+        <!-- 进度条 -->
+        <div class="a-progress">
+          <div class="pgs-total" id="progress-total">
+            <div class="pgs-play" id="progress" style="width: 0%"></div>
+          </div>
+        </div>
+        <!-- 下排控制按钮 -->
+        <div class="a-controls">
+          <!-- 播放时长 -->
+          <div class="time-container">
+            <span class="played-time" id="playedTime">00:00</span>&nbsp;/&nbsp;
+            <span class="audio-time" id="audioTime">00:00</span>
+          </div>
+          <!-- 中间按钮 -->
+          <div class="center-button-container">
+            <!-- 播放模式 -->
+            <div id="playMode" class="center-icon mode"></div>
+            <!-- 上一首 -->
+            <div id="skipBackward" class="center-icon s-left"></div>
+            <!-- 播放/暂停按钮 -->
+            <div id="playPause" class="icon-play"></div>
+            <!-- 下一首 -->
+            <div id="skipForward" class="center-icon s-right"></div>
+            <!-- 音量调节 -->
+            <div class="volume-wrapper">
+              <div id="volume" class="center-icon volume"></div>
+              <input type="range" id="volumn-togger" value="70" min="0" max="100" step="1" />
+            </div>
+          </div>
+          <!-- 后部按钮 -->
+          <div class="bottom-button-container">
+            <!-- 列表 -->
+            <div id="list" class="bottom-icon list"></div>
+            <!-- 倍速 -->
+            <div id="speed" class="speed">1.0X</div>
+            <!-- MV -->
+            <div id="MV" class="bottom-icon MV"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 播放队列预览条 -->
+    <div class="queue-preview" id="queuePreview">
+      <div class="queue-preview-content">
+        <div class="queue-icon"></div>
+        <span class="queue-text">播放队列</span>
+        <span class="queue-count" id="queueCount">4</span>
+        <div class="queue-arrow"></div>
+      </div>
+    </div>
+
+    <!-- 音乐列表弹窗 -->
+    <div class="close-list" id="close-list"></div>
+    <div class="music-list" id="music-list">
+      <div class="music-list-container">
+        <div class="music-list-header">
+          <div class="music-list-title">播放队列</div>
+          <div class="close-btn" id="closeListBtn">✕</div>
+        </div>
+        <hr class="line" />
+        <div class="all-list" id="allList">
+          <div id="music0" class="queue-item">
+            <span class="queue-item-title">逆光-变奏</span>
+            <span class="queue-item-author">芳贺敬太</span>
+          </div>
+          <div id="music1" class="queue-item">
+            <span class="queue-item-title">どんな結末がお望みだい？</span>
+            <span class="queue-item-author">神代類 初音ミク...</span>
+          </div>
+          <div id="music2" class="queue-item">
+            <span class="queue-item-title">月姫</span>
+            <span class="queue-item-author">芳贺敬太</span>
+          </div>
+          <div id="music3" class="queue-item">
+            <span class="queue-item-title">星が瞬くこんな夜に</span>
+            <span class="queue-item-author">Supercell</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="./js/audio.js"></script>
+  </body>
+</html>
